@@ -3,24 +3,25 @@
     "elmType": "div",
     "children": [{
         "elmType": "span",
-        "txtContent": "=(100 * @currentField) + '%'",
+        "txtContent": "@currentField",
         "style": {
             "padding-left": "8px",
-            "white-space": "nowrap"
+            "white-space": "nowrap",
+            "font-weight": "bold" 
         }
     }],
     "attributes": {
         "role": "progressbar",
         "aria-valuenow": "@currentField",
         "aria-valuemin": "0",
-        "aria-valuemax": "1"
+        "aria-valuemax": "10"
     },
     "style": {
         "padding": "0",
         "color": "black",
-        "background-color": "=if(@currentField <= 0.25, '#c86c70', if(@currentField <= 0.5, '#ffc83d', '#85b44c'))",
-        "border-top": "='2px solid' + if(@currentField <= 0.25, '#a4262c', if(@currentField <= 0.5, '#997825', '#498205'))",
-        "width": "=if(@currentField > 1, '100%', if(@currentField < 0, '0', (100 * @currentField) + '%'))",
+        "background-color": "=if(@currentField <= 2, '#c86c70', if(@currentField <= 5, '#ffc83d', '#85b44c'))",
+        "border-top": "='2px solid' + if(@currentField <= 2, '#a4262c', if(@currentField <= 5, '#997825', '#498205'))",
+        "width": "=if(@currentField > 10, '100%', if(@currentField < 0, '0', (10 * @currentField) + '%'))",
         "box-sizing": "border-box"
     }
 }
